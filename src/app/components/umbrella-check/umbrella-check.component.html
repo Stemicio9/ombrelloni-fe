@@ -1,0 +1,35 @@
+<div class="row mt-5" style="text-align: center;">
+  <h1><b>Prenota il tuo menù</b></h1>
+ </div>
+
+
+ <div class="row mt-3" style="text-align: center;">
+   <h5>Seleziona il tuo ombrellone</h5>
+  </div>
+
+
+
+  <div class="row mt-5" style="text-align: center;">
+   <label for="typeahead-format" type="button">Inserisci il numero del tuo ombrellone</label>
+  </div>
+
+  <div class="row" tyle="text-align: center;">
+    <input
+	id="typeahead-format"
+	type="text"
+	class="form-control"
+	[(ngModel)]="model"
+	[ngbTypeahead]="search"
+	[resultFormatter]="formatter"
+/>
+  </div>
+
+
+
+  <div class="row mt-3" style="text-align: center;">
+    <div class="col-md-12">
+      <button  class=" button-style">
+        <span style="font-size: 13px;" class="text-light button-label">VERIFICA</span>
+      </button>
+    </div>
+ </div>
