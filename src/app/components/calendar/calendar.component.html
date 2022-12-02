@@ -1,5 +1,6 @@
 
-  <div class="row mt-5" style="text-align: center;">
+ <div class="center">
+  <div class="row" style="text-align: center;">
     <h1><b>Prenota il tuo ombrellone</b></h1>
    </div>
 
@@ -8,10 +9,9 @@
      <h5>Seleziona una data</h5>
     </div>
 
-
-    <!-- <div class="row mt-3" style="text-align: center;">
-      <form class="row row-cols-sm-auto">
-        <div class="col-12">
+    <div *ngIf="!dateRange" class="row mt-3">
+      <form class="container ">
+        <div class="col-md-6">
           <div class="input-group">
             <input
               class="form-control"
@@ -21,26 +21,101 @@
               ngbDatepicker
               #d="ngbDatepicker"
             />
-            <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
+            <button class="btn bi bi-calendar3 date-picker-color text-light" (click)="d.toggle()" type="button"></button>
           </div>
         </div>
       </form>
-    </div> -->
-
-
-    <div class="row mt-3" style="text-align: center;">
-     <label type="button" style="text-decoration: underline;">Prenota per più giorni</label>
     </div>
 
 
 
-    <div class="row mt-3" style="text-align: center;">
+    <form *ngIf="dateRange" class="row mt-3">
+      <div class="container">
+
+      <div class="col-md-6" style="padding-right: 1rem;">
+        <div class="dp-hidden position-absolute">
+          <div class="input-group">
+            <input
+              name="datepicker"
+              class="form-control"
+              ngbDatepicker
+              #datepicker="ngbDatepicker"
+              [autoClose]="'outside'"
+              (dateSelect)="onDateSelection($event)"
+              [displayMonths]="2"
+              [dayTemplate]="t"
+              outsideDays="hidden"
+              [startDate]="fromDate!"
+              tabindex="-1"
+            />
+            <ng-template #t let-date let-focused="focused">
+              <span
+                class="custom-day"
+                [class.focused]="focused"
+                [class.range]="isRange(date)"
+                [class.faded]="isHovered(date) || isInside(date)"
+                (mouseenter)="hoveredDate = date"
+                (mouseleave)="hoveredDate = null"
+              >
+                {{ date.day }}
+              </span>
+            </ng-template>
+          </div>
+        </div>
+        <div class="input-group">
+          <input
+            #dpFromDate
+            class="form-control"
+            placeholder="yyyy-mm-dd"
+            name="dpFromDate"
+            [value]="formatter.format(fromDate)"
+            (input)="fromDate = validateInput(fromDate, dpFromDate.value)"
+          />
+          <button class="btn bi bi-calendar3 date-picker-color text-light" style="padding-right: 1rem;" (click)="datepicker.toggle()" type="button"></button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="input-group">
+          <input
+            #dpToDate
+            class="form-control"
+            placeholder="yyyy-mm-dd"
+            name="dpToDate"
+            [value]="formatter.format(toDate)"
+            (input)="toDate = validateInput(toDate, dpToDate.value)"
+          />
+          <button class="btn bi bi-calendar3 date-picker-color text-light" (click)="datepicker.toggle()" type="button"></button>
+        </div>
+      </div>
+      </div>
+    </form>
+
+
+
+
+
+    <div *ngIf="!dateRange" class="row mt-3" style="text-align: center;">
+     <label (click)="dateRange = !dateRange" type="button" style="text-decoration: underline;">Prenota per più giorni</label>
+    </div>
+
+    <div *ngIf="dateRange" class="row mt-3" style="text-align: center;">
+      <label (click)="dateRange = !dateRange" type="button" style="text-decoration: underline;">Prenota per un giorno</label>
+     </div>
+
+
+
+    <div class="row mt-5" style="text-align: center;">
       <div class="col-md-12">
         <button  class=" button-style">
-          <span style="font-size: 13px;" class="text-light button-label">PRENOTA</span>
+          <span style="font-size: 13px;" class="text-light">PRENOTA</span>
         </button>
       </div>
    </div>
+ </div>
+
+
+
+
 
 
 

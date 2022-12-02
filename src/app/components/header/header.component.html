@@ -1,0 +1,41 @@
+<!-- Image and text -->
+<div *ngIf="this.showHeader">
+  <nav class="navbar p-2 navbar-dark">
+    <div class="ms-xs-5 ms-sm-3 ms-md-4 ms-lg-5">
+      <a class="navbar-brand" href="/home">
+        <img
+          src="/assets/back-white-icon.png"
+          width="30"
+          height="30"
+          class="d-inline-block"
+        />
+      </a>
+      <span class="text-light" style="margin-left: 2rem">{{this.pageTitle}}</span>
+    </div>
+
+    <div class="row" style="margin-right: 3rem">
+      <div class="col-md-2">
+
+        <a class="navbar-brand">
+          <img style="cursor:pointer" routerLink="/cart" src="/assets/cart-white-icon.png" width="30" height="30" />
+        </a>
+      </div>
+
+      <div class="col-md-6">
+
+        <div style="height:10px">
+          <label style="font-size: 12px;" class="text-light">Totale</label>
+        </div>
+        <div >
+          <label  style="font-size: 10px;" class="text-light">25,00€</label>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <button type="button" style="border-radius: 0.5rem" class="btn btn-light">
+          PROCEDI
+        </button>
+      </div>
+    </div>
+  </nav>
+</div>
