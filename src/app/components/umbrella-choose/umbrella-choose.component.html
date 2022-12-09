@@ -1,0 +1,28 @@
+<div style="padding-top: 3rem; padding-bottom: 3rem">
+  <div class="row" style="text-align: center">
+    <h1><b>Prenota il tuo ombrellone</b></h1>
+  </div>
+
+  <div class="row mt-4" style="text-align: center">
+    <h5>Scegli il tuo ombrellone</h5>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6">
+      <div class="umbrella-card" >
+        <div class="row">
+          <div class="col-md-12">
+            <img
+              *ngFor="let umbrella of umbrellaList"
+              class="umbrella-icon"
+              [src]="umbrella.src"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+</div>

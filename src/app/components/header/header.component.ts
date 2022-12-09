@@ -7,9 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-
-  @Input('showHeader') showHeader = false;
   @Input('pageTitle') pageTitle = '';
+  @Input('showButton') showButton = false;
 
   constructor() { }
 

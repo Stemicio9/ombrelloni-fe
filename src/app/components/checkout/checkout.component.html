@@ -1,23 +1,157 @@
-<div class="row mt-5" style="text-align: center">
-  <h1><b>Checkout</b></h1>
-</div>
-
-<div class="row mt-4" style="text-align: center">
-  <h5>Scegli cosa consumare</h5>
-</div>
-
-
-
-
-
-
-<div class="row mt-5">
-  <div class="col-md-2"></div>
-  <div class="col-md-8">
-    <button routerLink="/cart" class="button-style">
-      <span style="font-size: 13px" class="text-light">PROCEDI</span>
-    </button>
+<div style="padding-top: 3rem; padding-bottom: 3rem">
+  <div class="row" style="text-align: center">
+    <h1><b>Checkout</b></h1>
   </div>
-  <div class="col-md-2"></div>
 
+  <div class="row mt-4" style="text-align: center">
+    <h5>Finalizza il tuo acquisto</h5>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-1"></div>
+    <div class="col-md-7">
+      <form>
+        <div class="row mb-4">
+          <label><b>Dettagli di pagamento</b></label>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-7">
+            <label>Nome e cognome</label>
+            <input  type="text" class="form-control shadow-none" />
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="form-group col-md-7">
+            <label>Indirizzo email</label>
+            <input type="text" class="form-control shadow-none" />
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="form-group col-md-7">
+            <label>Paese</label>
+            <input type="text" class="form-control shadow-none" />
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="form-group col-md-5">
+            <label>Città</label>
+            <input  type="text" class="form-control shadow-none" />
+          </div>
+          <div class="form-group col-md-2">
+            <label>CAP</label>
+            <input type="number" class="form-control shadow-none" />
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <label><b>Dettagli di pagamento</b></label>
+        </div>
+
+        <div
+          class="card mt-4 col-md-7"
+          style="padding-top: 1rem; padding-bottom: 1rem"
+        >
+          <div class="row">
+            <div class="form-check">
+              <input
+                style="border-radius: 50%"
+                mdbCheckbox
+                class="form-check-input shadow-none"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+              <label>Carta di credito </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="form-group col-md-7">
+            <label>Numero della carta</label>
+            <input type="number" class="form-control shadow-none" />
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="form-group col-md-4">
+            <label>Data di scadenza</label>
+            <div class="row">
+              <div class="col-md-6">
+                <input type="number" class="form-control shadow-none" placeholder="Mese" />
+              </div>
+              <div class="col-md-6" style="padding-left: 0.025rem;">
+                <input type="number" class="form-control shadow-none" placeholder="Anno" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group col-md-3" style="padding-left: 2rem;">
+            <label>CVV</label>
+            <input type="number" class="form-control shadow-none" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <div class="row">
+          <h4>Riepilogo</h4>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-md-8">
+            <label>Pasta alla Carbonara</label>
+          </div>
+
+          <div class="col-md-4">
+            <div style="float: right">
+              <label>18,00€</label>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-8">
+            <label>Pasta al Pomodoro</label>
+          </div>
+
+          <div class="col-md-4">
+            <div style="float: right">
+              <label>5,00€</label>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <div class="row">
+          <div class="col-md-8">
+            <label><b>Totale</b></label>
+          </div>
+
+          <div class="col-md-4">
+            <div style="float: right">
+              <label><b>23,00€</b></label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <button routerLink="/cart" class="button-style">
+        <span style="font-size: 13px" class="text-light"
+          >COMPLETA L'ORDINE</span
+        >
+      </button>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
 </div>

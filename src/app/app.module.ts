@@ -14,6 +14,9 @@ import { MenuListComponent } from './components/menu-list/menu-list.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { UmbrellaModalComponent } from './components/modal/umbrella-modal/umbrella-modal.component';
+import { UmbrellaChooseComponent } from './components/umbrella-choose/umbrella-choose.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     MenuListComponent,
     HeaderComponent,
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    UmbrellaChooseComponent,
+    UmbrellaModalComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     NgbTypeaheadModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    NgbAccordionModule
+    NgbAccordionModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
