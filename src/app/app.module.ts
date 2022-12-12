@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -30,7 +30,9 @@ import { UmbrellaChooseComponent } from './components/umbrella-choose/umbrella-c
     CartComponent,
     CheckoutComponent,
     UmbrellaChooseComponent,
-    UmbrellaModalComponent
+    UmbrellaModalComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,7 @@ import { UmbrellaChooseComponent } from './components/umbrella-choose/umbrella-c
     ReactiveFormsModule,
     BrowserAnimationsModule,
     NgbAccordionModule,
+
 
   ],
   providers: [],

@@ -12,7 +12,7 @@ import { UmbrellaChooseComponent } from './components/umbrella-choose/umbrella-c
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, data: {title: 'Scegli cosa prenotare'}},
   { path: 'calendar', component: CalendarComponent, data: {title: 'Seleziona una data'} },
   { path: 'umbrellacheck', component: UmbrellaCheckComponent, data: {title: 'Seleziona il tuo ombrellone'} },
   { path: 'menuerror', component: MenuErrorComponent },

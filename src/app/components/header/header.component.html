@@ -1,17 +1,20 @@
 <!-- Image and text -->
 <nav class="navbar p-2 navbar-dark" style="height: 3.5rem;">
   <div class="ms-xs-5 ms-sm-3 ms-md-4 ms-lg-5">
-    <a class="navbar-brand" href="/home">
+    <a class="navbar-brand">
       <img
+
+        *ngIf="this.pageTitle != 'Scegli cosa prenotare'"
         src="/assets/back-white-icon.png"
         width="30"
         height="30"
         class="d-inline-block"
+        (click)="back()"
+        type="button"
+
       />
     </a>
-    <span class="text-light" style="margin-left: 2rem">{{
-      this.pageTitle
-    }}</span>
+    <span class="text-light" style="margin-left: 2rem">{{this.pageTitle}}</span>
   </div>
 
   <div class="row" style="margin-right: 4rem">

@@ -7,124 +7,229 @@
     <h5>Rivedi il tuo ordine</h5>
   </div>
 
-  <div class="row mt-4">
-    <div class="col-md-1"></div>
+  <!-- Content web -->
 
-    <div class="col-md-7">
+  <div class="d-lg-flex d-none row mt-4">
+    <div class="col-lg-1"></div>
+
+    <div class="col-lg-7">
       <div class="card">
         <div class="row align-items-center" style="height: 2rem">
-          <div class="col-md-2"></div>
-          <div class="col-md-3">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-4">
             <label><b>Articolo</b></label>
           </div>
-          <div class="col-md-3">
+          <div class="col-lg-2">
             <label><b>Q.ta</b></label>
           </div>
-          <div class="col-md-3">
+          <div class="col-lg-3">
             <label><b>Prezzo</b></label>
           </div>
-          <div class="col-md-1"></div>
+          <div class="col-lg-1"></div>
         </div>
         <hr />
-        <div class="row align-items-center" style="height: 3rem">
-          <div class="col-md-2">
-            <img src="assets/carbonara-image.png" class="menu-image" />
-          </div>
-          <div class="col-md-3">
-            <label><b>Pasta alla Carbonara</b></label>
-          </div>
-          <div class="col-md-3">
-            <label><b>2</b></label>
+
+        <div *ngFor="let e of orderList; index as j">
+          <div class="row align-items-center" style="height: 3rem">
+            <div class="col-lg-2">
+              <img src="{{ e.image }}" class="menu-image" />
+            </div>
+            <div class="col-lg-4">
+              <label
+                ><b>{{ e.name }}</b></label
+              >
+            </div>
+            <div class="col-lg-2">
+              <div ngbDropdown>
+                <button
+                  type="button"
+                  class="dp-style text-light"
+                  ngbDropdownToggle
+                >
+                  Q.tà: {{ e.quantity }}
+                </button>
+                <div ngbDropdownMenu>
+                  <div *ngFor="let c of dpNumber; index as i">
+                    <button
+                      ngbDropdownItem
+                      class="dropdown-background"
+                      (click)="change1(c, j)"
+                    >
+                      {{ c }}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3">
+              <label
+                ><b>{{ formatPrice(e.price) }}</b></label
+              >
+            </div>
+            <div class="col-lg-1">
+              <img class="trash-icon-size" src="{{ e.removeIcon }}" />
+            </div>
           </div>
 
-          <div class="col-md-3">
-            <label><b>18,00€</b></label>
-          </div>
-          <div class="col-md-1">
-            <img class="trash-icon-size" src="assets/trash-icon.png" />
-          </div>
-        </div>
-
-        <hr />
-        <div class="row align-items-center" style="height: 3rem">
-          <div class="col-md-2">
-            <img src="assets/spaghetti-pomodoro.png" class="menu-image" />
-          </div>
-          <div class="col-md-3">
-            <label><b>Pasta al Pomodoro</b></label>
-          </div>
-          <div class="col-md-3">
-            <label><b>1</b></label>
-          </div>
-
-          <div class="col-md-3">
-            <label><b>5,00€</b></label>
-          </div>
-          <div class="col-md-1">
-            <img class="trash-icon-size" src="assets/trash-icon.png" />
-          </div>
+          <hr />
         </div>
       </div>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-lg-3">
       <div class="card">
-        <div class="row">
+        <div class="row mb-4">
           <h4>Riepilogo</h4>
         </div>
+        <div *ngFor="let e of orderList; index as i">
+          <div class="row mb-3">
+            <div class="col-lg-1">
+              <label
+                ><b>{{ e.quantity }}</b></label
+              >
+            </div>
 
-        <div class="row mt-4">
-          <div class="col-md-8">
-            <label>Pasta alla Carbonara</label>
-          </div>
+            <div class="col-lg-7">
+              <label>{{ e.name }}</label>
+            </div>
 
-          <div class="col-md-4">
-            <div style="float: right">
-              <label>18,00€</label>
+            <div class="col-lg-4">
+              <div style="float: right">
+                <label>{{ formatPrice(e.price) }}</label>
+              </div>
             </div>
           </div>
         </div>
-        <div class="row mt-3">
-          <div class="col-md-8">
-            <label>Pasta al Pomodoro</label>
-          </div>
 
-          <div class="col-md-4">
-            <div style="float: right">
-              <label>5,00€</label>
-            </div>
-          </div>
-        </div>
         <hr />
 
         <div class="row">
-          <div class="col-md-8">
+          <div class="col-lg-8">
             <label><b>Totale</b></label>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-lg-4">
             <div style="float: right">
-              <label><b>23,00€</b></label>
+              <label
+                ><b>{{ formatPrice(totale) }}</b></label
+              >
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-md-1"></div>
+    <div class="col-lg-1"></div>
+  </div>
 
+  <!-- Content Mobile -->
+  <div class="row mt-4 d-lg-none d-flex">
+    <div class="col-12">
+      <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+        <ngb-panel title="Il tuo ordine">
+          <ng-template ngbPanelContent>
+            <div *ngFor="let e of orderList; index as j">
+              <div class="row align-items-center" style="margin-right: 0.2rem">
+                <div class="col-2">
+                  <img src="{{ e.image }}" class="menu-image" />
+                </div>
+                <div class="col-9">
+                  <div>
+                    <label>{{ e.name }}</label>
+                  </div>
 
+                  <div>
+                    <div ngbDropdown [(ngModel)]="e.quantity" ngDefaultControl>
+                      <button
+                        type="button"
+                        class="dp-style text-light"
+                        ngbDropdownToggle
+                      >
+                        Q.tà: {{ e.quantity }}
+                      </button>
+                      <div ngbDropdownMenu>
+                        <div *ngFor="let c of dpNumber">
+                          <button
+                            ngbDropdownItem
+                            class="dropdown-background"
+                            (click)="change1(c, j)"
+                          >
+                            {{ c }}
+                          </button>
+                        </div>
+                      </div>
+
+                      <label style="margin-left: 1rem"
+                        ><b>{{ formatPrice(e.price) }}</b>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-1">
+                  <img class="trash-icon-size" src="{{ e.removeIcon }}" />
+                </div>
+              </div>
+
+              <hr />
+            </div>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
+  </div>
+
+  <div class="row mt-4 d-lg-none d-flex">
+    <div class="col-12">
+      <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+        <ngb-panel title="Riepilogo {{ formatPrice(totale) }}">
+          <ng-template ngbPanelContent>
+            <div *ngFor="let e of orderList; index as i" class="row mt-2">
+              <div class="col-1">
+                <label
+                  ><b>{{ e.quantity }}</b></label
+                >
+              </div>
+
+              <div class="col-8">
+                <label>{{ e.name }}</label>
+              </div>
+
+              <div class="col-3">
+                <div style="float: right">
+                  <label>{{ formatPrice(e.price) }}</label>
+                </div>
+              </div>
+            </div>
+            <hr />
+
+            <div class="row">
+              <div class="col-8">
+                <label><b>Totale</b></label>
+              </div>
+
+              <div class="col-4">
+                <div style="float: right">
+                  <label
+                    ><b>{{ formatPrice(totale) }}</b></label
+                  >
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
   </div>
 
   <div class="row mt-5" style="text-align: right">
-    <div class="col-md-1"></div>
-    <div class="col-md-10">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10">
       <button routerLink="/checkout" class="button-style">
-        <span style="font-size: 13px" class="text-light"
-          >VAI AL PAGAMENTO</span
-        >
+        <span style="font-size: 13px" class="text-light">VAI AL PAGAMENTO</span>
       </button>
     </div>
-    <div class="col-md-1"></div>
+    <div class="col-lg-1"></div>
   </div>
 </div>

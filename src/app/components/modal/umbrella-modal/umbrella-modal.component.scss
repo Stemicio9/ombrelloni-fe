@@ -1,0 +1,21 @@
+.modal-margin{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+
+.dp-style{
+  background-color: var( --blue-light);
+  border-radius: 0.4rem;
+  border-width: 0;
+}
+
+.dp-style:hover{
+  background-color: var( --blue-dark);
+}
+
+
+.dropdown-background:active{
+  background-color:var( --blue-dark);
+}

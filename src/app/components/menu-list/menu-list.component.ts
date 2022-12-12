@@ -8,9 +8,6 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class MenuListComponent implements OnInit {
 
-  @Input()
-  min: string | number | null | undefined ;
-
   inputs: number[] = [0,0,0];
 
   constructor() { }

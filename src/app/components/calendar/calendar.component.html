@@ -29,10 +29,10 @@
 
 
 
-    <form *ngIf="dateRange" class="row mt-3">
+    <form *ngIf="dateRange" class="row mt-3" style="margin-right: 0.1rem;margin-left: 0.1rem;">
       <div class="container">
 
-      <div class="col-md-6" style="padding-right: 1rem;">
+      <div class="col-md-6 col-12" style="padding-right: 1rem;">
         <div class="dp-hidden position-absolute">
           <div class="input-group">
             <input
@@ -74,7 +74,7 @@
           <button class="btn bi bi-calendar3 date-picker-color text-light" style="padding-right: 1rem;" (click)="datepicker.toggle()" type="button"></button>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 col-12">
         <div class="input-group">
           <input
             #dpToDate

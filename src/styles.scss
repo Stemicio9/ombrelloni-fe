@@ -41,6 +41,7 @@ html, body {
   transform: translate(-50%, -50%);
 }
 
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border: none;
@@ -74,6 +75,13 @@ hr {
   border-radius: 0.75rem;
 }
 
+
+.umbrella-info-image{
+  width: 350px;
+  height: 200px;
+  border-radius: 0.75rem;
+}
+
 .trash-icon-size{
   height: 25px;
   width: 25px;
@@ -84,4 +92,37 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+
+
+.choice-button{
+  padding-left:1rem;
+  padding-right: 1rem;
+  border-width: 0;
+  background-color: #416b89;
+  border-radius: 0.5rem;
+}
+
+
+.choice-button:active{
+  background-color:#10334d;
+}
+
+.choice-button:hover{
+  background-color:#10334d;
+
+}
+
+
+
+.button-align{
+  margin-top: 0.4rem;
+
+}
+
+
+.payment-icon{
+  width: 35px;
+  height: 20px;
 }
