@@ -16,6 +16,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { UmbrellaModalComponent } from './components/modal/umbrella-modal/umbrella-modal.component';
 import { UmbrellaChooseComponent } from './components/umbrella-choose/umbrella-choose.component';
+import { NgbDateParserFormatterExtProvider } from './components/date-picker';
 
 
 @NgModule({
@@ -46,7 +47,9 @@ import { UmbrellaChooseComponent } from './components/umbrella-choose/umbrella-c
 
 
   ],
-  providers: [],
+  providers: [
+    NgbDateParserFormatterExtProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
