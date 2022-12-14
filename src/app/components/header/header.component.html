@@ -5,7 +5,7 @@
       <img
 
         *ngIf="this.pageTitle != 'Scegli cosa prenotare'"
-        src="/assets/back-white-icon.png"
+        src="/assets/back-icon.png"
         width="30"
         height="30"
         class="d-inline-block"
@@ -14,10 +14,10 @@
 
       />
     </a>
-    <span class="text-light d-md-inline d-none" style="margin-left: 1rem">{{this.pageTitle}}</span>
+    <label class="text-light d-md-inline d-none" style="margin-left: 1rem">{{this.pageTitle}}</label>
   </div>
 
-  <div class="row" style="margin-right: 0.1rem">
+  <div *ngIf="showCart" class="row" style="margin-right: 0.1rem">
     <div class="col-md-4 col-lg-2 col-6"></div>
     <div class="col-md-2 col-lg-2 col-2" style="padding-right: 1.5rem">
       <a class="navbar-brand">
@@ -32,12 +32,12 @@
       </a>
     </div>
 
-    <div class="col-md-3 col-lg-5 col-3">
+    <div  class="col-md-3 col-lg-5 col-3">
       <div style="height: 10px">
         <label style="font-size: 12px" class="text-light">Totale</label>
       </div>
       <div>
-        <label style="font-size: 10px" class="text-light">23,00€</label>
+        <label style="font-size: 10px" class="text-light">{{formatPrice(totale)}}</label>
       </div>
     </div>
   </div>

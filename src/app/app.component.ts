@@ -9,7 +9,8 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 export class AppComponent {
   title = 'ombrelloni-FE';
 
-  showButton = false;
+  showCart = false;
+
   pageTitle = '';
 
   constructor(private router: Router) {}
@@ -25,11 +26,10 @@ export class AppComponent {
   }
 
   setupHeader(val: any) {
-
-    this.showButton =
+      this.showCart =
       val.url.includes('menulist') ||
       val.url.includes('umbrellachoose') ||
-
+      val.url.includes('checkout') ||
       val.url.includes('cart');
 
 

@@ -2,6 +2,13 @@
 
 @import "bootstrap/scss/bootstrap";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
+
+label, h5, h1{
+  font-family: 'Poppins',sans-serif;
+  font-weight: 300;
+}
+
+
 :root {
   --blue-dark: #10334d;
   --blue-light: #416b89;
@@ -9,8 +16,8 @@
 html, body {
   height: 100%;
   background-color: #f5f5f5 !important;
-
 }
+
 
 .button-style{
   border-width: 0;
@@ -19,6 +26,9 @@ html, body {
   padding-bottom: 0.7rem;
   padding-top: 0.7rem;
   background-color: #416b89;
+  transition: 0.3s;
+  font-family: 'Josefin Sans',sans-serif !important;
+  letter-spacing: 2px;
 }
 
 
@@ -102,6 +112,8 @@ input::-webkit-inner-spin-button {
   border-width: 0;
   background-color: #416b89;
   border-radius: 0.5rem;
+  transition: 0.3s;
+
 }
 
 
@@ -129,4 +141,9 @@ input::-webkit-inner-spin-button {
 .payment-icon-mob{
   width: 25px;
   height: 15px;
+}
+
+.form-control:focus{
+  border-color: var(--blue-light);
+  box-shadow: none;
 }

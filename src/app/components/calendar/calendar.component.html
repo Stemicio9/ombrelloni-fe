@@ -11,8 +11,8 @@
 
     <div *ngIf="!dateRange" class="row mt-3">
       <form class="container ">
-        <div class="col-md-6">
-          <div class="input-group">
+        <div class="col-md-6 font-family ">
+          <div class="input-group ">
             <input
               class="form-control"
               placeholder="Scegli una data"
@@ -32,7 +32,7 @@
     <form *ngIf="dateRange" class="row mt-3" style="margin-right: 0.1rem;margin-left: 0.1rem;">
       <div class="container">
 
-      <div class="col-md-6 col-12" style="padding-right: 1rem;">
+      <div class="col-md-6 col-12" style="padding-right: 0.5rem;">
         <div class="dp-hidden position-absolute">
           <div class="input-group">
             <input
@@ -62,11 +62,11 @@
             </ng-template>
           </div>
         </div>
-        <div class="input-group">
+        <div class="input-group font-family">
           <input
             #dpFromDate
             class="form-control"
-            placeholder="yyyy-mm-dd"
+            placeholder="Data di inizio"
             name="dpFromDate"
             [value]="formatter.format(fromDate)"
             (input)="fromDate = validateInput(fromDate, dpFromDate.value)"
@@ -74,12 +74,12 @@
           <button class="btn bi bi-calendar3 date-picker-color text-light" style="padding-right: 1rem;" (click)="datepicker.toggle()" type="button"></button>
         </div>
       </div>
-      <div class="col-md-6 col-12">
+      <div class="col-md-6 col-12 font-family" style="padding-left: 0.5rem;">
         <div class="input-group">
           <input
             #dpToDate
             class="form-control"
-            placeholder="yyyy-mm-dd"
+            placeholder="Data di fine"
             name="dpToDate"
             [value]="formatter.format(toDate)"
             (input)="toDate = validateInput(toDate, dpToDate.value)"

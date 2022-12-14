@@ -9,8 +9,10 @@ import { Location } from '@angular/common'
 })
 export class HeaderComponent implements OnInit {
 
+  totale=23.00;
+
   @Input('pageTitle') pageTitle = '';
-  @Input('showButton') showButton = false;
+  @Input('showCart') showCart = false;
 
   constructor( private location: Location) { }
 
@@ -20,5 +22,9 @@ export class HeaderComponent implements OnInit {
 
   back(){
     this.location.back();
+  }
+
+  formatPrice(p: number){
+    return p.toFixed(2).toString().replace('.',',') + '€'
   }
 }

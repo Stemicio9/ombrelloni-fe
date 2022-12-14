@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-umbrella-modal',
@@ -17,7 +18,7 @@ export class UmbrellaModalComponent implements OnInit {
   chooseLettini = 0;
 
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
   }
@@ -45,4 +46,7 @@ export class UmbrellaModalComponent implements OnInit {
     this.chooseSdraio = number
   }
 
+  closeModal() {
+    this.modalService.dismissAll();
+  }
 }

@@ -5,8 +5,10 @@ import { debounceTime, distinctUntilChanged, map, Observable, OperatorFunction }
   selector: 'app-umbrella-check',
   templateUrl: './umbrella-check.component.html',
   styleUrls: ['./umbrella-check.component.scss']
+
 })
 export class UmbrellaCheckComponent implements OnInit {
+
   public model: any;
 
 	formatter = (result: string) => result.toUpperCase();

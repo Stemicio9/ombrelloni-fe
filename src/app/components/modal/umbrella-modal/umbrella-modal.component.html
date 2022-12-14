@@ -12,14 +12,14 @@
     <h5><b>Info:</b></h5>
   </div>
   <div style="margin-left: 4.5rem" class="mt-2">
-    <span>Ombrellone A23</span>
+    <label>Ombrellone A23</label>
   </div>
 
   <div style="margin-left: 4.5rem" class="mt-5">
     <h5><b>Descrizione:</b></h5>
   </div>
   <div style="margin-left: 4.5rem" class="mt-2">
-    <span>In questo ombrellone sono previste 2 sedute</span>
+    <label>In questo ombrellone sono previste 2 sedute</label>
   </div>
 
   <div style="margin-left: 4.5rem" class="mt-5">
@@ -27,12 +27,13 @@
   </div>
   <div style="margin-left: 3.7rem" class="row mt-2">
     <div class="col-lg-7">
-      <span>Lettino</span>
+      <label>Lettino</label>
     </div>
     <div class="col-lg-5">
-      <div ngbDropdown>
-        <button type="button" class=" dp-style text-light" ngbDropdownToggle>
-          Q.tà: {{chooseLettini}}
+      <div ngbAutofocus ngbDropdown>
+        <button  class=" dp-style text-light" ngbDropdownToggle>
+          <label type="button">Q.tà: {{chooseLettini}}</label>
+
         </button>
         <div ngbDropdownMenu>
           <div *ngFor="let c of dpNumber; index as i">
@@ -47,12 +48,13 @@
 
   <div style="margin-left: 3.7rem" class="row mt-2">
     <div class="col-lg-7">
-      <span>Sdraio</span>
+      <label>Sdraio</label>
     </div>
     <div class="col-lg-5" >
       <div ngbDropdown>
-        <button type="button" class=" dp-style text-light" ngbDropdownToggle>
-          Q.tà: {{chooseSdraio}}
+        <button  class=" dp-style text-light" ngbDropdownToggle>
+          <label type="button"> Q.tà: {{chooseSdraio}}
+          </label>
         </button>
         <div ngbDropdownMenu>
           <div *ngFor="let c of dpNumber; index as i">
@@ -65,13 +67,16 @@
     </div>
   </div>
   <div style="text-align: center" class="mt-4">
-    <span type="button" style="text-decoration: underline"
-      ><b>AGGIUNGI AL CARRELLO</b></span
-    >
+    <label
+    type="button"
+    style="text-decoration: underline"
+    (click)="closeModal()" >
+    <b>AGGIUNGI AL CARRELLO</b>
+  </label>
   </div>
 
   <div style="text-align: center" class="mt-3">
-    <button routerLink="/checkout" class="button-style">
+    <button routerLink="/checkout" class="button-style" (click)="closeModal()">
       <span style="font-size: 13px" class="text-light">VAI AL PAGAMENTO</span>
     </button>
   </div>

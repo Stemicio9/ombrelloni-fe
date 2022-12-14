@@ -3,3 +3,14 @@
 }
 
 
+::ng-deep .dropdown-item.active{ background-color: var(--blue-dark)}
+::ng-deep .dropdown-item:active { background-color: var(--blue-dark)}
+::ng-deep .dropdown-item:focus { background-color: var(--blue-dark)}
+::ng-deep .dropdown-item:hover { background-color: var(--blue-dark); color: white;}
+
+
+
+.font-family{
+  font-family: 'Poppins',sans-serif;
+  font-weight: 300;
+}

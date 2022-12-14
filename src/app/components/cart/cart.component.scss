@@ -2,6 +2,8 @@
   background-color: var( --blue-light);
   border-radius: 0.4rem;
   border-width: 0;
+  transition: 0.3s;
+
 }
 
 .dp-style:hover{
@@ -11,4 +13,24 @@
 
 .dropdown-background:active{
   background-color:var( --blue-dark);
+}
+
+
+.dropdown-background:hover{
+  background-color:var( --blue-dark);
+  color: white;
+}
+
+
+::ng-deep .accordion-button:focus { box-shadow: none;}
+::ng-deep .accordion-button:not(.collapsed) { background-color: var(--blue-dark);color: white; }
+
+
+::ng-deep .accordion-button:not(.collapsed)::after {
+  filter: brightness(0%) invert(100%);
+}
+
+
+::ng-deep .accordion-item {
+  margin-bottom: 2rem;
 }

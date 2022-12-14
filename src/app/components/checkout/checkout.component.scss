@@ -1,1 +1,24 @@
 
+::ng-deep .accordion-button:focus { box-shadow: none;}
+::ng-deep .accordion-button:not(.collapsed) { background-color: var(--blue-dark);color: white; }
+
+
+::ng-deep .accordion-button:not(.collapsed)::after {
+  filter: brightness(0%) invert(100%);
+}
+::ng-deep .accordion-item {
+  margin-bottom: 2rem;
+}
+
+
+.checkbox-style{
+  border-radius: 50%;
+  cursor: pointer;
+  border-color: var(--blue-light);
+
+}
+
+
+.checkbox-style:checked{
+  background-color: var(--blue-light);
+}
