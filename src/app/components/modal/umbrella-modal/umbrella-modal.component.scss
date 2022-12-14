@@ -9,13 +9,25 @@
   background-color: var( --blue-light);
   border-radius: 0.4rem;
   border-width: 0;
+  transition: 0.3s;
+
 }
 
 .dp-style:hover{
   background-color: var( --blue-dark);
+
 }
+
 
 
 .dropdown-background:active{
   background-color:var( --blue-dark);
 }
+
+
+.dropdown-background:hover{
+  background-color:var( --blue-dark);
+  color: white;
+}
+
+
