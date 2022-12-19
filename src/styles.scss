@@ -8,16 +8,15 @@ label, h5, h1{
   font-weight: 300;
 }
 
-
 :root {
   --blue-dark: #10334d;
   --blue-light: #416b89;
 }
+
 html, body {
   height: 100%;
   background-color: #f5f5f5 !important;
 }
-
 
 .button-style{
   border-width: 0;
@@ -32,7 +31,6 @@ html, body {
   border-radius: 0.4rem;
 }
 
-
 .button-style:active{
   background-color:#10334d;
 }
@@ -42,7 +40,6 @@ html, body {
 
 }
 
-
 .center {
   margin: 0;
   position: absolute;
@@ -51,7 +48,6 @@ html, body {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -86,7 +82,6 @@ hr {
   border-radius: 0.75rem;
 }
 
-
 .umbrella-info-image{
   width: 350px;
   height: 200px;
@@ -105,8 +100,6 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-
-
 .choice-button{
   padding-left:1rem;
   padding-right: 1rem;
@@ -117,28 +110,23 @@ input::-webkit-inner-spin-button {
 
 }
 
-
 .choice-button:active{
   background-color:#10334d;
 }
 
 .choice-button:hover{
   background-color:#10334d;
-
 }
-
-
 
 .button-align{
   margin-top: 0.4rem;
-
 }
-
 
 .payment-icon{
   width: 35px;
   height: 20px;
 }
+
 .payment-icon-mob{
   width: 25px;
   height: 15px;
@@ -147,4 +135,100 @@ input::-webkit-inner-spin-button {
 .form-control:focus{
   border-color: var(--blue-light);
   box-shadow: none;
+}
+
+
+
+
+
+
+.date-picker-color{
+  background-color: #416b89;
+}
+
+.date-picker-color:hover{
+  background-color: #10334d;
+
+}
+
+
+.font-family{
+  font-family: 'Poppins',sans-serif;
+  font-weight: 300;
+}
+
+.dp-hidden {
+  width: 0;
+  margin: 0;
+  border: none;
+  padding: 0;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 300;
+
+}
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+
+}
+.custom-day.focused {
+  background-color: #e6e6e6;
+}
+.custom-day.range,
+.custom-day:hover {
+  background-color: var(--blue-dark);
+  color: white;
+
+}
+.custom-day.faded {
+  background-color: var(--blue-light);
+
+}
+
+
+
+::ng-deep .ngb-dp-weekday.small {
+  color: black;
+  font-weight: 700;
+  font-style: normal;
+}
+
+::ng-deep .ngb-dp-navigation-chevron{
+  color: var(--blue-light);
+
+}
+::ng-deep .ngb-dp-navigation-chevron:hover{
+  color: var(--blue-dark);
+
+}
+
+
+::ng-deep .ngb-dp-months{
+  display: flex !important;
+}
+
+
+::ng-deep .form-select:focus{
+  box-shadow: none;
+  border-color: var(--blue-light);
+
+}
+
+
+::ng-deep .form-select{
+  border-color: var(--blue-light);
+
+}
+
+
+.close-icon-size{
+  height: 22px;
+  width: 22px;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
 }

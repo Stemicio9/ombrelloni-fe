@@ -14,6 +14,9 @@ export class UmbrellaModalComponent implements OnInit {
 
   dpNumber: number[] = [1,2,3,4,5,6]
 
+  info='Ombrellone A23'
+  description='In questo ombrellone sono previste 2 sedute'
+
   chooseSdraio = 0;
   chooseLettini = 0;
 

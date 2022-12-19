@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons, NgbDateStruct, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UmbrellaModalComponent } from '../modal/umbrella-modal/umbrella-modal.component';
 
 @Component({
@@ -13,6 +13,8 @@ export class UmbrellaChooseComponent implements OnInit {
   umbrellaInfo = UmbrellaModalComponent;
 
   isSelected=false;
+
+  model: NgbDateStruct | null = null;
 
   umbrellaList : any[] = [
     {
@@ -155,7 +157,7 @@ export class UmbrellaChooseComponent implements OnInit {
   }
 
   openGenericModal(content:any){
-    const modalRef = this.modalService.open(content, {centered: true, size: 'md', ariaLabelledBy: 'modal-basic-title'});
+    const modalRef = this.modalService.open(content, {  centered: true, size: 'md', ariaLabelledBy: 'modal-basic-title'});
     modalRef.componentInstance.data = '';
 
   }

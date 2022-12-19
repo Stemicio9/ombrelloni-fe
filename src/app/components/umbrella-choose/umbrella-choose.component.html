@@ -1,4 +1,29 @@
 <div style="padding-top: 3rem; padding-bottom: 3rem">
+
+
+
+  <div class="d-md-none d-flex row mb-5" style="text-align: center">
+      <form class="container">
+        <div class="col-lg-2 col-md-3 col-8 font-family">
+          <div class="input-group">
+            <input
+              class="form-control"
+              placeholder="Scegli una data"
+              name="dp"
+              [(ngModel)]="model"
+              ngbDatepicker
+              #d="ngbDatepicker"
+            />
+            <button
+              class="btn bi bi-calendar3 date-picker-color text-light"
+              (click)="d.toggle()"
+              type="button"
+            ></button>
+          </div>
+        </div>
+      </form>
+    </div>
+
   <div class="row" style="text-align: center">
     <h1><b>Prenota il tuo ombrellone</b></h1>
   </div>
@@ -8,9 +33,9 @@
   </div>
 
   <div class="row mt-4">
-    <div class="col-lg-4 col-md-2"></div>
+    <div class="col-lg-3 col-md-2"> </div>
 
-    <div class="col-lg-4 col-md-8">
+    <div class="col-lg-6 col-md-8">
       <div class="umbrella-card" >
         <div class="row">
           <div class="col-lg-12">
@@ -23,7 +48,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-2"></div>
+      <div class="col-lg-3 col-md-2"></div>
     </div>
   </div>
 </div>

@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
 
   choose1 = 0;
 
-  totale=23;
+  total=0;
 
   orderList:Order[] = [
     new Order('assets/carbonara-image.png','Mezze maniche alla Carbonara',2,18,'assets/trash-icon.png'),
@@ -32,7 +32,6 @@ export class CartComponent implements OnInit {
   formatPrice(p: number){
     return p.toFixed(2).toString().replace('.',',') + '€'
   }
-
 
   remove(element: any){
     var index = this.orderList.indexOf(element);

@@ -117,7 +117,7 @@
           <div class="col-lg-4">
             <div style="float: right">
               <label
-                ><b>{{ formatPrice(totale) }}</b></label
+                ><b>{{ formatPrice(total) }}</b></label
               >
             </div>
           </div>
@@ -193,7 +193,7 @@
         </ngb-panel>
         <ngb-panel>
           <ng-template ngbPanelTitle>
-            <label><b>Riepilogo - {{ formatPrice(totale) }}</b></label>
+            <label><b>Riepilogo - {{ formatPrice(total) }}</b></label>
           </ng-template>
           <ng-template ngbPanelContent>
             <div *ngFor="let e of orderList; index as i" class="row mt-2">
@@ -223,7 +223,7 @@
               <div class="col-4">
                 <div style="float: right">
                   <label
-                    ><b>{{ formatPrice(totale) }}</b></label
+                    ><b>{{ formatPrice(total) }}</b></label
                   >
                 </div>
               </div>
