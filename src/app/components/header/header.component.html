@@ -21,6 +21,7 @@
     <form *ngIf="this.pageTitle == 'Scegli il tuo ombrellone'" class="d-md-inline d-none">
       <div class="font-family">
           <input
+            [readonly]="true"
             class="form-control text-light"
             placeholder="Scegli una data"
             name="dp"

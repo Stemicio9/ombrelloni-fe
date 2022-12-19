@@ -16,7 +16,7 @@
             placeholder="Scegli una data"
             name="dp"
             [(ngModel)]="model"
-            value="egg"
+            [readonly]="true"
             ngbDatepicker
             #d="ngbDatepicker"
           />
@@ -72,6 +72,7 @@
             class="form-control"
             placeholder="Data di inizio"
             name="dpFromDate"
+            [readonly]="true"
             [value]="formatter.format(fromDate)"
             (input)="fromDate = validateInput(fromDate, dpFromDate.value)"
 
@@ -91,6 +92,7 @@
             class="form-control"
             placeholder="Data di fine"
             name="dpToDate"
+            [readonly]="true"
             [value]="formatter.format(toDate)"
             (input)="toDate = validateInput(toDate, dpToDate.value)"
           />
