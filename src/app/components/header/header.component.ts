@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Location } from '@angular/common'
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -8,6 +9,9 @@ import { Location } from '@angular/common'
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
+  model: NgbDateStruct | null = null;
+
 
   totale=23.00;
 

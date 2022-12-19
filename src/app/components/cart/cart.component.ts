@@ -34,5 +34,9 @@ export class CartComponent implements OnInit {
   }
 
 
+  remove(element: any){
+    var index = this.orderList.indexOf(element);
+    this.orderList.splice(index,1);
+  }
 
 }

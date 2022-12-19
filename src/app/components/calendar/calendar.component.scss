@@ -37,16 +37,45 @@
 }
 .custom-day.range,
 .custom-day:hover {
-  background-color: rgb(2, 117, 216);
+  background-color: var(--blue-dark);
   color: white;
 
 }
 .custom-day.faded {
-  background-color: rgba(2, 117, 216, 0.5);
+  background-color: var(--blue-light);
 
 }
 
 
 
+::ng-deep .ngb-dp-weekday.small {
+  color: black;
+  font-weight: 700;
+  font-style: normal;
+}
+
+::ng-deep .ngb-dp-navigation-chevron{
+  color: var(--blue-light);
+
+}
+::ng-deep .ngb-dp-navigation-chevron:hover{
+  color: var(--blue-dark);
+
+}
 
 
+::ng-deep .ngb-dp-months{
+  display: block !important;
+}
+
+
+::ng-deep .form-select:focus{
+  box-shadow: none;
+  border-color: var(--blue-light);
+
+}
+
+
+::ng-deep .form-select{
+  border-color: var(--blue-light);
+}

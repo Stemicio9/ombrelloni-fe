@@ -2,3 +2,86 @@
   background-color: #10334d;
 }
 
+.font-family{
+  font-family: 'Poppins',sans-serif;
+  font-weight: 300;
+}
+
+.dp-hidden {
+  width: 0;
+  margin: 0;
+  border: none;
+  padding: 0;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 300;
+
+}
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+
+}
+.custom-day.focused {
+  background-color: #e6e6e6;
+}
+.custom-day.range,
+.custom-day:hover {
+  background-color: var(--blue-dark);
+  color: white;
+
+}
+.custom-day.faded {
+  background-color: var(--blue-light);
+
+}
+
+
+
+::ng-deep .ngb-dp-weekday.small {
+  color: black;
+  font-weight: 700;
+  font-style: normal;
+}
+
+::ng-deep .ngb-dp-navigation-chevron{
+  color: var(--blue-light);
+
+}
+::ng-deep .ngb-dp-navigation-chevron:hover{
+  color: var(--blue-dark);
+
+}
+
+
+::ng-deep .ngb-dp-months{
+  display: block !important;
+}
+
+
+::ng-deep .form-select:focus{
+  box-shadow: none;
+  border-color: var(--blue-light);
+
+}
+
+
+::ng-deep .form-select{
+  border-color: var(--blue-light);
+}
+
+
+.form-control{
+  background-color: var(--blue-dark);
+  border-color: #f7f7f7;
+  border-radius: 0.75rem;
+
+}
+
+.form-control::placeholder {
+  color: #f7f7f7;
+}
+
+

@@ -1,38 +1,43 @@
 
- <div class="center">
-  <div class="row" style="text-align: center">
+  <div class="row mt-5" style="text-align: center">
     <h1><b>Prenota il tuo ombrellone</b></h1>
-   </div>
+  </div>
+
+  <div class="row mt-3" style="text-align: center">
+    <h5>Seleziona una data</h5>
+  </div>
+
+  <div *ngIf="!dateRange" class="row mt-3">
+    <form class="container">
+      <div class="col-lg-2 col-md-3 col-8 font-family">
+        <div class="input-group">
+          <input
+            class="form-control"
+            placeholder="Scegli una data"
+            name="dp"
+            [(ngModel)]="model"
+            ngbDatepicker
+            #d="ngbDatepicker"
 
 
-   <div class="row mt-3" style="text-align: center;">
-     <h5>Seleziona una data</h5>
-    </div>
-
-    <div *ngIf="!dateRange" class="row mt-3">
-      <form class="container ">
-        <div class="col-md-6 font-family ">
-          <div class="input-group ">
-            <input
-              class="form-control"
-              placeholder="Scegli una data"
-              name="dp"
-              [(ngModel)]="model"
-              ngbDatepicker
-              #d="ngbDatepicker"
-            />
-            <button class="btn bi bi-calendar3 date-picker-color text-light" (click)="d.toggle()" type="button"></button>
-          </div>
+          />
+          <button
+            class="btn bi bi-calendar3 date-picker-color text-light"
+            (click)="d.toggle()"
+            type="button"
+          ></button>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
+  </div>
 
-
-
-    <form *ngIf="dateRange" class="row mt-3" style="margin-right: 0.1rem;margin-left: 0.1rem;">
-      <div class="container">
-
-      <div class="col-md-6 col-12" style="padding-right: 0.5rem;">
+  <form
+    *ngIf="dateRange"
+    class="row mt-3"
+    style="margin-right: 0.1rem; margin-left: 0.1rem"
+  >
+    <div class="container">
+      <div class="col-lg-2 col-md-3 col-6" style="padding-right: 0.5rem">
         <div class="dp-hidden position-absolute">
           <div class="input-group">
             <input
@@ -70,11 +75,17 @@
             name="dpFromDate"
             [value]="formatter.format(fromDate)"
             (input)="fromDate = validateInput(fromDate, dpFromDate.value)"
+
           />
-          <button class="btn bi bi-calendar3 date-picker-color text-light" style="padding-right: 1rem;" (click)="datepicker.toggle()" type="button"></button>
+          <button
+            class="btn bi bi-calendar3 date-picker-color text-light"
+            style="padding-right: 1rem"
+            (click)="datepicker.toggle()"
+            type="button"
+          ></button>
         </div>
       </div>
-      <div class="col-md-6 col-12 font-family" style="padding-left: 0.5rem;">
+      <div class="col-lg-2 col-md-3 col-6 font-family" style="padding-left: 0.5rem">
         <div class="input-group">
           <input
             #dpToDate
@@ -84,39 +95,38 @@
             [value]="formatter.format(toDate)"
             (input)="toDate = validateInput(toDate, dpToDate.value)"
           />
-          <button class="btn bi bi-calendar3 date-picker-color text-light" (click)="datepicker.toggle()" type="button"></button>
+          <button
+            class="btn bi bi-calendar3 date-picker-color text-light"
+            (click)="datepicker.toggle()"
+            type="button"
+          ></button>
         </div>
       </div>
-      </div>
-    </form>
-
-
-
-
-
-    <div *ngIf="!dateRange" class="row mt-3" style="text-align: center;">
-     <label (click)="dateRange = !dateRange" type="button" style="text-decoration: underline;">Prenota per più giorni</label>
     </div>
+  </form>
 
-    <div *ngIf="dateRange" class="row mt-3" style="text-align: center;">
-      <label (click)="dateRange = !dateRange" type="button" style="text-decoration: underline;">Prenota per un giorno</label>
-     </div>
+  <div *ngIf="!dateRange" class="row mt-3" style="text-align: center">
+    <label
+      (click)="dateRange = !dateRange"
+      type="button"
+      style="text-decoration: underline"
+      >Prenota per più giorni</label
+    >
+  </div>
 
+  <div *ngIf="dateRange" class="row mt-3" style="text-align: center">
+    <label
+      (click)="dateRange = !dateRange"
+      type="button"
+      style="text-decoration: underline"
+      >Prenota per un giorno</label
+    >
+  </div>
 
-
-    <div class="row mt-5" style="text-align: center;">
-      <div class="col-md-12">
-        <button routerLink="/umbrellachoose" class=" button-style">
-          <span style="font-size: 13px;" class="text-light">PRENOTA</span>
-        </button>
-      </div>
-   </div>
- </div>
-
-
-
-
-
-
-
-
+  <div class="row mt-5" style="text-align: center">
+    <div class="col-md-12">
+      <button routerLink="/umbrellachoose" class="button-style">
+        <span style="font-size: 13px" class="text-light">PRENOTA</span>
+      </button>
+    </div>
+  </div>

@@ -1,10 +1,9 @@
 <!-- Image and text -->
 <nav class="navbar p-2 navbar-dark" style="height: 3.5rem;">
   <div class="ms-xs-5 ms-sm-3 ms-md-4 ms-lg-5">
-    <a class="navbar-brand">
+    <a *ngIf="this.pageTitle != 'Scegli cosa prenotare'" class="navbar-brand">
       <img
 
-        *ngIf="this.pageTitle != 'Scegli cosa prenotare'"
         src="/assets/back-icon.png"
         width="30"
         height="30"
@@ -14,8 +13,28 @@
 
       />
     </a>
-    <label class="text-light d-md-inline d-none" style="margin-left: 1rem">{{this.pageTitle}}</label>
+    <label class="text-light d-md-inline d-none">{{this.pageTitle}}</label>
   </div>
+
+
+
+    <form *ngIf="this.pageTitle == 'Scegli il tuo ombrellone'">
+      <div class="font-family">
+          <input
+            class="form-control text-light"
+            placeholder="Scegli una data"
+            name="dp"
+            [(ngModel)]="model"
+            ngbDatepicker
+            #d="ngbDatepicker"
+            (click)="d.toggle()"
+          />
+      </div>
+    </form>
+
+
+
+
 
   <div *ngIf="showCart" class="row" style="margin-right: 0.1rem">
     <div class="col-md-4 col-lg-2 col-6"></div>

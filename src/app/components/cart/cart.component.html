@@ -69,11 +69,15 @@
               >
             </div>
             <div class="col-lg-1">
-              <img class="trash-icon-size" src="{{ e.removeIcon }}" />
+              <img (click)="remove(e)" class="trash-icon-size" src="{{ e.removeIcon }}" />
             </div>
           </div>
 
           <hr />
+        </div>
+
+        <div *ngIf="orderList.length == 0" class="row" style="text-align: center;">
+          <label><b>Il carrello è vuoto</b></label>
         </div>
       </div>
     </div>
@@ -134,7 +138,8 @@
           </ng-template>
           <ng-template ngbPanelContent>
             <div *ngFor="let e of orderList; index as j">
-              <div class="row align-items-center" style="margin-right: 0.2rem">
+
+              <div *ngIf="orderList.length > 0" class="row align-items-center" style="margin-right: 0.2rem">
                 <div class="col-2">
                   <img src="{{ e.image }}" class="menu-image" />
                 </div>
@@ -172,13 +177,18 @@
                   </div>
                 </div>
 
+
+
                 <div class="col-1">
-                  <img class="trash-icon-size" src="{{ e.removeIcon }}" />
+                  <img (click)="remove(e)" class="trash-icon-size" src="{{ e.removeIcon }}" />
                 </div>
               </div>
-
               <hr />
             </div>
+            <div *ngIf="orderList.length == 0" class="row" style="text-align: center;">
+              <label><b>Il carrello è vuoto</b></label>
+            </div>
+
           </ng-template>
         </ngb-panel>
         <ngb-panel>
@@ -226,7 +236,16 @@
 
 
 
-  <div class="row mt-2" style="text-align: right">
+  <div class="row mt-2 d-md-none d-flex" style="text-align: center">
+    <div class="col-12">
+      <button routerLink="/checkout" class="button-style">
+        <span style="font-size: 13px" class="text-light">VAI AL PAGAMENTO</span>
+      </button>
+    </div>
+  </div>
+
+
+  <div class="row mt-2 d-md-flex d-none" style="text-align: right">
     <div class="col-lg-1"></div>
     <div class="col-lg-10">
       <button routerLink="/checkout" class="button-style">
@@ -235,4 +254,3 @@
     </div>
     <div class="col-lg-1"></div>
   </div>
-</div>
