@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalDismissReasons, NgbDateStruct, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons, NgbCalendar, NgbDate, NgbDateStruct, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UmbrellaModalComponent } from '../modal/umbrella-modal/umbrella-modal.component';
 
 @Component({
@@ -8,7 +8,6 @@ import { UmbrellaModalComponent } from '../modal/umbrella-modal/umbrella-modal.c
   styleUrls: ['./umbrella-choose.component.scss']
 })
 export class UmbrellaChooseComponent implements OnInit {
-
 
   umbrellaInfo = UmbrellaModalComponent;
 
@@ -151,7 +150,8 @@ export class UmbrellaChooseComponent implements OnInit {
     },
   ];
 
-  constructor(private modalService: NgbModal) { }
+  constructor( private modalService: NgbModal) {
+  }
 
   ngOnInit(): void {
   }
